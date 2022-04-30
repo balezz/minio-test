@@ -3,7 +3,7 @@ import time
 import os
 
 BUCKET_NAME = 'test-bucket-1'
-LOCAL_FILE_PATH = './data/data/sdd-lacmus-version.zip'
+LOCAL_FILE_PATH = '~/ds/data/sdd-lacmus-version.zip'
 S3_FILE_NAME = 'sdd-lacmus-version.zip'
 TMP_FILE = './data/tmp/tmp.zip'
 
