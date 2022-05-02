@@ -10,7 +10,8 @@ from datetime import datetime
 BUCKET_NAME = 'test-bucket-1'
 S3_FILE_NAME = 'test_file.zip'
 TMP_FILE = './data/tmp/tmp.zip'
-LOG_FILE = './logs/update-delete-1.log'
+LOG_FILE = './logs/update-delete-3.log'
+MINIO_URL = '51.250.21.31:9000'
 
 logging.basicConfig(filename=LOG_FILE, level=logging.DEBUG)
 
@@ -36,7 +37,7 @@ def upload_read(file_name):
     logging.info(f'File size = {file_size // (2**20)} MB')
 
     t = time.time()
-    client = Minio("datalake.website:9000",
+    client = Minio(MINIO_URL,
                    access_key='tester-1',
                    secret_key='testerpass',
                    secure=False)
@@ -72,9 +73,9 @@ if __name__ == '__main__':
     for n in range(14):
         size = 2**(n+20)
         test_file_name = f'data/{2**n}M.zip'
-        make_file(test_file_name, size)
+        # make_file(test_file_name, size)
         result[size] = upload_read(test_file_name)
 
-    with open('logs/result.pickle', 'wb') as handle:
+    with open('logs/result-3.pickle', 'wb') as handle:
         pickle.dump(result, handle, protocol=pickle.HIGHEST_PROTOCOL)
     logging.info('Test passed!')
