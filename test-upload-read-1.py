@@ -11,7 +11,7 @@ BUCKET_NAME = 'test-bucket-1'
 S3_FILE_NAME = 'test_file.zip'
 TMP_FILE = './data/tmp/tmp.zip'
 LOG_FILE = './logs/update-delete-3.log'
-MINIO_URL = '51.250.21.31:9000'
+MINIO_URL = 'datalake.website:9000'
 
 logging.basicConfig(filename=LOG_FILE, level=logging.DEBUG)
 

@@ -3,7 +3,7 @@ import plotly.express as px
 from minio import Minio
 import pandas as pd
 
-MINIO_URL = '51.250.101.19:9000'
+MINIO_URL = 'datalake.website:9000'
 BUCKET_NAME = 'test-bucket-3'
 S3_FILE = 'GAZP_220401_220504.csv'
 LOCAL_FILE = 'data/' + S3_FILE
